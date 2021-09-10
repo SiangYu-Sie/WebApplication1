@@ -9,7 +9,7 @@
                 <div>
                     <%--<div style="margin:auto auto; width:100px;"><asp:Label ID="Label1" runat="server" Text="002"></asp:Label></div>--%>
                     <div style="margin:auto auto; width:200px;">
-                        <asp:Image ID="Image1" runat="server" ImageUrl="" Width="200px" Height="150" />
+                        <asp:Image ID="Image1" runat="server" ImageUrl="Image/01.png" Width="200px" Height="150" />
 
                     </div>
                 </div>
@@ -47,7 +47,8 @@
                             <td>離所日期：</td>
                             <td>
                                 <%--<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>--%>
-                                <asp:Calendar ID="Calendar2" runat="server"></asp:Calendar>
+                                <asp:Calendar ID="Calendar2" runat="server" OnSelectionChanged="Calendar2_SelectionChanged"></asp:Calendar>
+                                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
                             </td>
                         
                         </tr>
@@ -114,8 +115,8 @@
                         <tr>
                             <td>進所日期：</td>
                             <td><%--<asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>--%>
-                            <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
-
+                                <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
+                                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         

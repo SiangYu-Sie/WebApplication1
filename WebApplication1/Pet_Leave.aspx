@@ -9,7 +9,7 @@
         
         <div style="margin:auto auto; width:1125px;">
              <div class="row" style="width:500px; margin-left:60px;">
-                <div style="width:100px; float:left;">
+                <div style="float:left;">
                     <asp:Button ID="Button1" runat="server" Text="發送MAIL" CssClass="btn btn-primary" OnClick="Button1_Click1" />
 
                 </div>
@@ -50,9 +50,9 @@
                             string s = "Pet_Detail.aspx?ID=" + sID + "&Type=E";
                            
                             string sHtml = "<div style='width:280px;border:solid 1px black; float:left; margin:20px 0px 0px 60px;'>";
-                            sHtml += "<div style='width:160px; margin:auto auto;'>";
+                            sHtml += "<div style='width:240px; margin:auto auto;'>";
                             sHtml += "<a href='" + s + "'>";
-                            sHtml += "<img src='Pic2/" + sIMG + "' />";
+                            sHtml += "<img src='Pic2/" + sIMG + "' style='width:240px;height:180px;'/>";
                             sHtml += "</a>";
                             sHtml += "</div>";
                             sHtml += "<div>";

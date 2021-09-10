@@ -32,7 +32,7 @@ namespace WebApplication1
 
             
 
-            string sql = "select a.*, b.ID from PET_SIAZE a inner join ADOPTERS b on a.ADOPT = b.ID where a.IS_ADOPT = 0 AND a.LEAVE_DATE <> ''";
+            string sql = "select a.*, b.ID, b.ADOPTERS_MAIL from PET_SIAZE a inner join ADOPTERS b on a.ADOPT = b.ID where a.IS_ADOPT = 0 AND a.LEAVE_DATE <> ''";
             DataTable dt = new DataTable();
 
             SqlConnection sqlconn = new SqlConnection();
@@ -71,7 +71,7 @@ namespace WebApplication1
             SmtpClient MySmtp = new SmtpClient("smtp.gmail.com", 587);
 
             //您在gmail的帳號密碼
-            MySmtp.Credentials = new System.Net.NetworkCredential("", "");
+            MySmtp.Credentials = new System.Net.NetworkCredential("chaly904243@gmail.com", "abcdef731017");
 
             //開啟ssl
             MySmtp.EnableSsl = true;

@@ -21,7 +21,7 @@
                     string sText = Request.QueryString["Text"];
                     if(!string.IsNullOrWhiteSpace(sText))
                     {
-                        sWhere += "And (ADOPTERS_NAME like '%" + sText + "%' OR ADOPTERS_ADDR like '%" + sText + "%' OR ADOPTERS_HOME like '%" + sText + "%')";
+                        sWhere += "And (ADOPTERS_NAME like '%" + sText + "%' OR ADOPTERS_ADDR like '%" + sText + "%' OR ADOPTERS_HOME like '%" + sText + "%' OR ADOPTERS_TEL like '%" + sText + "%' OR ADOPTERS_MAIL like '%" + sText +"%')";
                     }
 
                     sql = sql + sWhere;

@@ -257,6 +257,8 @@ namespace WebApplication1
                 int iType = 0;
                 int iSex = 0;
                 int iAdopt = 0;
+                string sAdopt = string.Empty;
+                string sLeaveDate = string.Empty;
 
                 if (RadioButton4.Checked == true)
                 {
@@ -273,6 +275,17 @@ namespace WebApplication1
                     iAdopt = 1;
                 }
 
+                if(iAdopt == 1)
+                {
+                    sAdopt = "";
+                    sLeaveDate = "";
+                }
+                else
+                {
+                    sAdopt = DropDownList1.SelectedValue.ToString();
+                    sLeaveDate = Calendar2.SelectedDate.ToString("yyyy/MM/dd");
+                }
+
                 sqlCmd.Parameters.AddWithValue("@PET_VARIETY", TextBox1.Text);
                 sqlCmd.Parameters.AddWithValue("@PET_TYPE", iType);
                 sqlCmd.Parameters.AddWithValue("@PET_SEX", iSex);
@@ -285,9 +298,9 @@ namespace WebApplication1
                 sqlCmd.Parameters.AddWithValue("@LIGATION", TextBox11.Text);
                 sqlCmd.Parameters.AddWithValue("@VACCINE", TextBox12.Text);
                 sqlCmd.Parameters.AddWithValue("@DEWORMING", TextBox13.Text);
-                sqlCmd.Parameters.AddWithValue("@LEAVE_DATE", Calendar2.SelectedDate.ToString("yyyy/MM/dd"));
+                sqlCmd.Parameters.AddWithValue("@LEAVE_DATE", sLeaveDate);
                 sqlCmd.Parameters.AddWithValue("@IS_ADOPT", iAdopt);
-                sqlCmd.Parameters.AddWithValue("@ADOPT", DropDownList1.SelectedValue.ToString());
+                sqlCmd.Parameters.AddWithValue("@ADOPT", sAdopt);
                 sqlCmd.Parameters.AddWithValue("@PET_IMG", HiddenField1.Value);
                 sqlCmd.Parameters.AddWithValue("@ID", sID);
 
@@ -401,6 +414,16 @@ namespace WebApplication1
             {
                 //this.Upload_info.Text = "上傳發生錯誤！原因是："   ex.ToString();
             }
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            TextBox2.Text = Calendar1.SelectedDate.ToString("yyyy/MM/dd");
+        }
+
+        protected void Calendar2_SelectionChanged(object sender, EventArgs e)
+        {
+            TextBox4.Text = Calendar2.SelectedDate.ToString("yyyy/MM/dd");
         }
     }
 }

@@ -64,7 +64,7 @@
             </div>
             <div style="width:400px; float:left; margin:auto 20px;">
                 <div>
-                    <div style="margin:auto 60px; width:330px;"><asp:Image ID="Image1" runat="server" ImageUrl="Image/04.jpg" Width="240px" height="180px"/></div>
+                    <div style="margin:auto 60px; width:330px;"><asp:Image ID="Image1" runat="server" ImageUrl="Image/01.png" Width="240px" height="180px"/></div>
                 </div>
                 <div style="width:auto; height:auto; margin-top:">
                     <div style="margin:auto auto; width:230px;">

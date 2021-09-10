@@ -22,7 +22,7 @@
                     string sText = Request.QueryString["Text"];
                     if(!string.IsNullOrWhiteSpace(sText))
                     {
-                        sWhere += "And (PET_VARIETY like '%" + sText + "%' OR PERSONALITY like '%" + sText + "%')";
+                        sWhere += "And (PET_VARIETY like '%" + sText + "%' OR PERSONALITY like '%" + sText + "%' OR PET_WEIGHT = " + sText + " OR PET_COLOR = '%" + sText + "%' OR PET_NUM = '%" + sText + "%')";
                     }
 
                     sql = sql + sWhere;

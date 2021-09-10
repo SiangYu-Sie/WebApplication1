@@ -33,6 +33,11 @@ namespace WebApplication1
             dt.Load(Sqldr);
             Sqldr.Close();
 
+            if(dt.Rows.Count > 0)
+            {
+                Response.Write("<script language='javascript'>alert('無此帳號，請重新輸入。')</script>");
+            }
+
             if (dt.Rows[0]["PASSWORD"].ToString() != TextBox2.Text)
             {
                 Response.Write("<script language='javascript'>alert('密碼錯誤，請重新輸入。')</script>");
@@ -40,6 +45,11 @@ namespace WebApplication1
             else
             {
                 Server.Transfer("Default.aspx");
+            }
+
+            if(string.IsNullOrWhiteSpace(TextBox1.Text) || string.IsNullOrWhiteSpace(TextBox2.Text))
+            {
+                Response.Write("<script language='javascript'>alert('帳號或密碼不可為空白，請重新輸入。')</script>");
             }
         }
     }
